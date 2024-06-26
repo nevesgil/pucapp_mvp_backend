@@ -10,7 +10,7 @@ class PlainKidSchema(Schema):
     id = fields.Int(dump_only=True)
     name = fields.Str(required=True)
     sex = fields.Str(required=True)
-    parent = fields.Str(required=True)
+    parents = fields.Str(required=True)
     birthdate = fields.Date(required=True)
 
 

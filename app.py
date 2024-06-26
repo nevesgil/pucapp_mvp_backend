@@ -1,6 +1,7 @@
 from flask import redirect
 from db import db
 import models
+from flask_cors import CORS
 from flask import Flask
 from flask_smorest import Api
 import os
@@ -29,6 +30,9 @@ def create_app(db_url=None):
     db.init_app(app)
 
     api = Api(app)
+
+    # Enable CORS
+    CORS(app)
 
     @app.before_request
     def create_tables():

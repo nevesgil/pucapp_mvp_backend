@@ -32,7 +32,7 @@ class KidList(MethodView):
         """
         Retrieve a List of All kids
         """
-        return KidModel.query.with_entities(KidModel.id, KidModel.name).all()
+        return KidModel.query.with_entities(KidModel.id, KidModel.name, KidModel.parents, KidModel.sex, KidModel.birthdate).all()
 
     @blp.arguments(KidSchema)
     @blp.response(201, KidSchema)
