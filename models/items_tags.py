@@ -1,9 +1,9 @@
 from db import db
 
 
-class PostsTags(db.Model):
-    __tablename__ = "posts_tags"
+class ItemsTags(db.Model):
+    __tablename__ = "items_tags"
 
     id = db.Column(db.Integer, primary_key=True)
-    post_id = db.Column(db.Integer, db.ForeignKey("posts.id"))
+    item_id = db.Column(db.Integer, db.ForeignKey("items.id"))
     tag_id = db.Column(db.Integer, db.ForeignKey("tags.id"))

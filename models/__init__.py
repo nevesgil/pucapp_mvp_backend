@@ -1,4 +1,4 @@
 from models.kid import KidModel
-from models.post import PostModel
+from models.item import ItemModel
 from models.tag import TagModel
-from models.posts_tags import PostsTags
+from models.items_tags import ItemsTags

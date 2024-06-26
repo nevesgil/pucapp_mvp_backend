@@ -3,27 +3,27 @@ from flask_smorest import Blueprint, abort
 from sqlalchemy.exc import SQLAlchemyError
 
 from db import db
-from models import TagModel, StoreModel, ItemModel
+from models import TagModel, KidModel, ItemModel
 from resources.schemas import TagSchema, TagAndItemSchema
 
 blp = Blueprint("Tags", "tags", description="Operations on tags")
 
 
-@blp.route("/store/<string:store_id>/tag")
-class TagsInStore(MethodView):
+@blp.route("/kid/<string:kid_id>/tag")
+class TagsInkid(MethodView):
     @blp.response(200, TagSchema(many=True))
-    def get(self, store_id):
-        store = StoreModel.query.get_or_404(store_id)
+    def get(self, kid_id):
+        kid = KidModel.query.get_or_404(kid_id)
 
-        return store.tags.all()  # lazy="dynamic" means 'tags' is a query
+        return kid.tags.all()  # lazy="dynamic" means 'tags' is a query
 
     @blp.arguments(TagSchema)
     @blp.response(201, TagSchema)
-    def post(self, tag_data, store_id):
-        if TagModel.query.filter(TagModel.store_id == store_id, TagModel.name == tag_data["name"]).first():
-            abort(400, message="A tag with that name already exists in that store.")
+    def post(self, tag_data, kid_id):
+        if TagModel.query.filter(TagModel.kid_id == kid_id, TagModel.name == tag_data["name"]).first():
+            abort(400, message="A tag with that name already exists in that kid.")
 
-        tag = TagModel(**tag_data, store_id=store_id)
+        tag = TagModel(**tag_data, kid_id=kid_id)
 
         try:
             db.session.add(tag)

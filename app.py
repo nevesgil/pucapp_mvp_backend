@@ -4,8 +4,8 @@ import models
 from flask import Flask
 from flask_smorest import Api
 import os
-from resources.item import blp as ItemBlueprint
-from resources.store import blp as StoreBlueprint
+from resources.items import blp as ItemBlueprint
+from resources.kid import blp as KidBlueprint
 from resources.tag import blp as TagBlueprint
 
 
@@ -40,7 +40,7 @@ def create_app(db_url=None):
         return redirect("/docs")
 
     api.register_blueprint(ItemBlueprint)
-    api.register_blueprint(StoreBlueprint)
+    api.register_blueprint(KidBlueprint)
     api.register_blueprint(TagBlueprint)
 
     return app
