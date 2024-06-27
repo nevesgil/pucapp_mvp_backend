@@ -15,12 +15,14 @@ class TagsInkid(MethodView):
     def get(self, kid_id):
         kid = KidModel.query.get_or_404(kid_id)
 
-        return kid.tags.all()  # lazy="dynamic" means 'tags' is a query
+        return kid.tags.all()
 
     @blp.arguments(TagSchema)
     @blp.response(201, TagSchema)
     def post(self, tag_data, kid_id):
-        if TagModel.query.filter(TagModel.kid_id == kid_id, TagModel.name == tag_data["name"]).first():
+        if TagModel.query.filter(
+            TagModel.kid_id == kid_id, TagModel.name == tag_data["name"]
+        ).first():
             abort(400, message="A tag with that name already exists in that kid.")
 
         tag = TagModel(**tag_data, kid_id=kid_id)

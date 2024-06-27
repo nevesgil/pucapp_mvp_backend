@@ -1,6 +1,5 @@
 from flask import redirect
 from db import db
-import models
 from flask_cors import CORS
 from flask import Flask
 from flask_smorest import Api
@@ -24,14 +23,14 @@ def create_app(db_url=None):
         "https://cdn.jsdelivr.net/npm/swagger-ui-dist/"
     )
     app.config["SQLALCHEMY_DATABASE_URI"] = db_url or os.getenv(
-        "DATABASE_URL", "postgresql://admin:admin@postgres:5432/pucappdb" #"sqlite:///data.db"
+        "DATABASE_URL",
+        "postgresql://admin:admin@postgres:5432/pucappdb",
     )
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
 
     api = Api(app)
 
-    # Enable CORS
     CORS(app)
 
     @app.before_request
