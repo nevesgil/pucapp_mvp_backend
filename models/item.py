@@ -5,7 +5,7 @@ class ItemModel(db.Model):
     __tablename__ = "items"
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80), unique=False, nullable=False)
+    name = db.Column(db.String(400), unique=False, nullable=False)
 
     kid_id = db.Column(
         db.Integer, db.ForeignKey("kids.id"), unique=False, nullable=False
