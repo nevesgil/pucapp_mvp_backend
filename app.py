@@ -1,9 +1,9 @@
+import os
 from flask import redirect
 from db import db
 from flask_cors import CORS
 from flask import Flask
 from flask_smorest import Api
-import os
 from resources.items import blp as ItemBlueprint
 from resources.kid import blp as KidBlueprint
 from resources.tag import blp as TagBlueprint
@@ -33,11 +33,13 @@ def create_app(db_url=None):
 
     CORS(app)
 
+    # Init for the database
     @app.before_request
     def create_tables():
         app.before_request_funcs[None].remove(create_tables)
         db.create_all()
 
+    # Redirecting the route for the Swagger docs
     @app.route("/")
     def home():
         return redirect("/docs")
