@@ -14,4 +14,4 @@ class KidModel(db.Model):
         "ItemModel", back_populates="kid", lazy="dynamic", cascade="all, delete"
     )
 
-    tags = db.relationship("TagModel", back_populates="kid", lazy="dynamic")
+    tags = db.relationship("TagModel", back_populates="kid", lazy="dynamic", cascade="all, delete")

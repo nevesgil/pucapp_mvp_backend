@@ -6,7 +6,7 @@ from models import ItemModel
 from resources.schemas import ItemSchema, ItemUpdateSchema
 
 
-blp = Blueprint("Items", __name__, description="Operations on items")
+blp = Blueprint("Items", __name__, description="Operations on items/posts")
 
 
 @blp.route("/item/<string:item_id>")
@@ -20,7 +20,7 @@ class Item(MethodView):
         item = ItemModel.query.get_or_404(item_id)
         db.session.delete(item)
         db.session.commit()
-        return {"message": "DELETED"}
+        return {"message": "DELETED POST"}
 
     @blp.arguments(ItemUpdateSchema)
     @blp.response(200, ItemSchema)
@@ -52,6 +52,6 @@ class ItemList(MethodView):
             db.session.add(item)
             db.session.commit()
         except SQLAlchemyError:
-            abort(500, message="Error inserting the item")
+            abort(500, message="Error inserting the item/post")
 
         return item, 201
