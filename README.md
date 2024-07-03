@@ -58,3 +58,28 @@ A documentação da API pode ser diretamente acessada em http://localhost:5000/d
 
 ### Uso do Banco de Dados
 
+O banco pode ser acessado via PGAdmin, uma interface para o Postgresql, pelo endereço http://localhost:8081 .
+
+   ```
+   user = admin@pgadmin.com
+   password = admin
+   ``` 
+
+Clique em ADD SERVER.
+
+![as](/doc_images/as1.png)
+
+Configure a conexão com o mesmo password.
+
+![pg1](/doc_images/pg1.png)
+
+![pg1](/doc_images/pg2.png)
+
+
+Agora, na aba Object Explorer, é possível ver o banco ```pucappdb``` e as tabelas criadas para o projeto.
+```
+items
+items_tags
+kids
+tags
+```
