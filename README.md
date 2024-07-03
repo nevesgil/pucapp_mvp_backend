@@ -73,7 +73,7 @@ Configure a conexão com o mesmo password.
 
 ![pg1](/doc_images/pg1.png)
 
-![pg1](/doc_images/pg2.png)
+![pg2](/doc_images/pg2.png)
 
 
 Agora, na aba Object Explorer, é possível ver o banco ```pucappdb``` e as tabelas criadas para o projeto.
@@ -83,3 +83,5 @@ items_tags
 kids
 tags
 ```
+
+![pg3](/doc_images/pg3.png)
