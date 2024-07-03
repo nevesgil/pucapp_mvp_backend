@@ -2,7 +2,7 @@
 
 Backend do ChildsNotes, uma API construída com Flask, Docker e um banco de dados PostgreSQL.
 
-Esta documentação é referente ao backend do projeto. Para informações sobre o frontend, consulte o repositório [ChildsNotes-Backend](https://github.com/nevesgil/pucapp_mvp_frontend).
+Esta documentação é referente ao backend do projeto. Para informações sobre o frontend, consulte o repositório [ChildsNotes-Frontend](https://github.com/nevesgil/pucapp_mvp_frontend).
 
 
 ## Índice
@@ -10,8 +10,8 @@ Esta documentação é referente ao backend do projeto. Para informações sobre
 - [Tecnologias](#tecnologias)
 - [Instalação](#instalação)
 - [Uso](#uso)
-  - [Uso do Banco de Dados](#uso-do-banco-de-dados)
   - [Uso do Swagger](#uso-do-swagger)
+  - [Uso do Banco de Dados](#uso-do-banco-de-dados)
 - [Endpoints](#endpoints)
 
 
@@ -41,10 +41,7 @@ Para começar a usar o backend do ChildsNotes, siga estes passos:
    ```
    docker-compose up --build
 
-Obs: Ao fim do uso, utilizar o comando abaixo para desligar a aplicação.
-   ```
-   docker-compose down
-
+Obs: Ao fim do uso, utilizar o comando ```docker-compose down```
 
 Todas as imagens, dependências e connections estão pré-configuradas.
 
@@ -54,6 +51,10 @@ Após essa etapa, a aplicação pode ser acessada na porta 5000, e o banco na po
 
 ### Uso do Swagger
 
-A documentação da API pode ser diretamente acessada em http://localhost:5000/docs/ .
+A documentação da API pode ser diretamente acessada em http://localhost:5000/docs/ enquanto os containers estiverem em funcionamento.
 
 ![swagger1](/doc_images/swagger1.png)
+
+
+### Uso do Banco de Dados
+
