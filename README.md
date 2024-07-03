@@ -12,7 +12,6 @@ Esta documentação é referente ao backend do projeto. Para informações sobre
 - [Uso](#uso)
   - [Uso do Swagger](#uso-do-swagger)
   - [Uso do Banco de Dados](#uso-do-banco-de-dados)
-- [Endpoints](#endpoints)
 
 
 ## Introdução
