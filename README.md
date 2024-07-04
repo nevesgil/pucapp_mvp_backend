@@ -25,6 +25,13 @@ Este repositório contém o backend para a aplicação ChildsNotes. Ele inclui u
 
 OBS: É necessário ter o Docker instalado em sua máquina antes de utilizar a aplicação!!
 
+### Diagrama do banco
+
+No diagrama abaixo podemos visualizar as tabelas e relações criadas.
+
+![db1](/doc_images/db1.png)
+
+
 ## Instalação
 Para começar a usar o backend do ChildsNotes, siga estes passos:
 
