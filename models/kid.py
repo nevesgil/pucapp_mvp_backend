@@ -10,8 +10,11 @@ class KidModel(db.Model):
     parents = db.Column(db.String(100), unique=False, nullable=False)
     birthdate = db.Column(db.Date, unique=False, nullable=False)
 
+    #
     items = db.relationship(
         "ItemModel", back_populates="kid", lazy="dynamic", cascade="all, delete"
     )
 
-    tags = db.relationship("TagModel", back_populates="kid", lazy="dynamic", cascade="all, delete")
+    tags = db.relationship(
+        "TagModel", back_populates="kid", lazy="dynamic", cascade="all, delete"
+    )

@@ -7,6 +7,8 @@ from resources.schemas import TagSchema, TagAndItemSchema
 
 blp = Blueprint("Tags", "tags", description="Operations on tags")
 
+# TODO: Review the endpoints not yet implemented in the frontend
+
 
 @blp.route("/kid/<string:kid_id>/tag")
 class TagsInkid(MethodView):

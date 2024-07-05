@@ -12,6 +12,7 @@ Esta documentação é referente ao backend do projeto. Para informações sobre
 - [Uso](#uso)
   - [Uso do Swagger](#uso-do-swagger)
   - [Uso do Banco de Dados](#uso-do-banco-de-dados)
+  - [Diagrama do Banco de Dados](#diagrama-do-banco)
 
 
 ## Introdução
@@ -19,6 +20,7 @@ Este repositório contém o backend para a aplicação ChildsNotes. Ele inclui u
 
 ## Tecnologias
 - Flask
+- SQLAlchemy
 - PostgreSQL
 - Docker
 - Docker Compose
@@ -87,7 +89,7 @@ tags
 ![pg3](/doc_images/pg3.png)
 
 
-### Diagrama do banco
+### Diagrama do Banco de Dados
 
 No diagrama abaixo podemos visualizar as tabelas e relações criadas.
 
